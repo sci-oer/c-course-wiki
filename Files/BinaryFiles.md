@@ -1,18 +1,9 @@
----
-title: BinaryFiles
-description: 
-published: true
-date: 2022-10-28T23:47:56.519Z
-tags: 
-editor: markdown
-dateCreated: 2022-10-28T19:00:53.710Z
----
 
-### Binary files {#binary-files .unnumbered}
+### Binary files 
 
 A binary file is ultimately just a sequence of 0s and 1s (as are all files). A binary file is created when the software (and the programmer) specifies a specific layout for the sequence of 0s and 1s. Data is written according to that specific layout, and then it can be read back in again using the same rules for layout. The rules for file organization of binary files are set by the software (ultimately by the programmer) that created the file, which results in proprietary file formats that can only be read by applications designed to read those specific files.
 
-You've likely had lots of experience with binary files since most gamesave files, word processor documents and media files are some form ofbinary format.
+You've likely had lots of experience with binary files since most gamesave files, word processor documents and media files are some form of binary format.
 
 From a programming perspective, binary files are much easier to workwith when the size of each record in the file is fixed. Consider a program that stores the contents of a music library to a file on disk.
 
@@ -20,26 +11,23 @@ Each record in the music library is written to the binary file in such a way tha
 
 One side effect of this is that when you are storing string in a binary file, it is easier to use statically allocated strings so that all records are the same size.
 
--   In C, fopen opens any kind of file and gives you a file pointer
+-   In C, `fopen` opens any kind of file and gives you a file pointer
+-   `fseek` can be used to find a position in any kind of file, but makes the most sense when you know exactly how long each record is.
+   - The syntax for `fseek` is `fseek(filePtr,howFarToMove, whereToStart)` The address in the file pointer is changed as a result of calling fseek.
+- `rewind` can be used to reset the file pointer to the beginning of the file
+-   `fgets`, `fscanf`, and `fprintf` are the tools for reading and writing text files. They work because text files are in an agreed upon format but they don't work on binary files.
+- `fread` and `fwrite` are the tools for reading and writing binary files
+- `fseek` makes use of three constants that are predefined. `SEEK_SET`, `SEEK_CUR`, and `SEEK_END`. 
 
--   fseek can be used to find a position in any kind of file, but makes
-    the most sense when you know exactly how long each record is
-
--   rewind can be used to reset the file pointer to the beginning of the
-    file
-
--   fgets, fscanf, and fprintf are the tools for reading and writing
-    text files. They work because text files are in an agreed upon
-    format
-
--   fread and fwrite are the tools for reading and writing binary files
-
-fseek makes use of three constants that are predefined. `SEEK_SET`, `SEEK_CUR`, and `SEEK_END`. `SEEK_SET` is predefined to be the beginning of the file, `SEEK_END` is predictably the end of the file, and `SEEK_CUR` is the current position of the file. `SEEK_CUR` changes each time fseek,fread, or rewind are called. The syntax for fseek is `fseek(filePtr,howFarToMove, whereToStart)` The address in the file pointer is changed as a result of calling fseek.
+  - `SEEK_SET` is predefined to be the beginning of the file, 
+  - `SEEK_END` is predictably the end of the file, and 
+  - `SEEK_CUR` is the current position of the file. 
+     - `SEEK_CUR` changes each time fseek,fread, or rewind are called.
 
 ![image](/img/fseek.jpg) []{#fseek label="fseek"}
 
 The listing below gives an example program for reading and writing to binary files. Notice that the call to fopen uses either `"wb"` or "`rb"` to read and write a binary file as opposed to a text file. The struct used in this example is described in more detail in subsequent sections of this ebook.
-
+```c
     #include<stdio.h>
     #include<stdlib.h>
         
@@ -105,3 +93,4 @@ The listing below gives an example program for reading and writing to binary fil
       fclose(filePtr);
       return 0;
     }
+    ```

@@ -29,11 +29,14 @@ Everyone has their favourite conventions for computer programs. This resource is
 All examples are written with clarity for the reader as the primary objective. This means that variables are declared first and initialized in a separate step. It means that shorthand notation for operations is never used. It means that everything is parenthesized, even when it might not have to be. Examples are written to compile with `gcc`, using `-ansi -Wall` flags. All of the examples will also compile with `-std=c99
 -Wall`.
 
-Short examples often make it tricky to tell what the expectations are for coding conventions. Functions should be prototyped in a `.h` file and defined in a file separate from the file containing `*main*`. Each function prototype must have a preceding comment that describes the function's purpose and usage (The comment belongs in the .h file). Comments in implementation files are limited to explanations of complicated bits of logic or algorithm.
 
-Project files should be organized so that the main project directory has subdirectories for *src*, *bin*, *include* and *doc*. 
-- Source code (.c files) go in the *src* subdirectory. 
-- Header files (.h files) go in the *include* subdirectory. 
-- Documentation and testing files belong in the *doc* directory, 
-- the *bin* directory is used by the build process as a place to put executables. 
-- If your program uses images or save files, those should be in a separate subfolder called *resource* or*assets* 
+## Licensing
+
+###### This SCI-OER Java resource is intended to help novice programmers learn to program in an object-oriented fashion using the Java programming language.
+
+**Copyright (C) 2023  Dr. J. McCuaig, M. Asch and N. Laundry**
+
+This resource is free: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published  by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This resource is distributed in the hope that it will be useful,but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the [GNU Affero General Public License](/aboutOER/license) for more details.
+

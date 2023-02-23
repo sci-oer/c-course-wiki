@@ -1,21 +1,20 @@
-
 ---
-title: Structures with Pointers as Elements
+title: StructuresWithPointersAsElements
 description: 
-published: true
-date: 2022-10-28T20:52:17.559Z
+published: 1
+date: 2023-02-23T01:26:27.317Z
 tags: 
 editor: markdown
-dateCreated: 2022-10-28T20:52:17.559Z
+dateCreated: 2023-02-23T00:26:29.439Z
 ---
 
-## Structures with Pointers as elements {#structures-with-pointers-as-elements .unnumbered}
 
-When a structure contains an element that is a pointer, that element
-must always be dynamically allocated before it can be used. This is true
-even if the structure itself is statically allocated.
+## Structures with Pointers as elements 
 
-    /*structure definition-no allocation happening here */
+When a structure contains an element that is a pointer, that element must always be dynamically allocated before it can be used. This is true even if the structure itself is statically allocated.
+
+```c
+/*structure definition-no allocation happening here */
     struct Student
     {
       char * firstName;
@@ -23,9 +22,10 @@ even if the structure itself is statically allocated.
       int studentID;
       int GPA;
     };
+```
 
-    int main(void)
-    {
+```c
+    int main(void){
       int bufSize = 50;
 
       /*structure allocation- static */
@@ -48,3 +48,4 @@ even if the structure itself is statically allocated.
       printf("The second student is: %s %s\n", mySecondStudentPtr->firstName, mySecondStudentPtr->surname);
       return(0);
     }
+```

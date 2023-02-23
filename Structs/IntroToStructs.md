@@ -1,33 +1,31 @@
-
 ---
-title: Intro to Structs
+title: IntroToStructs
 description: 
-published: true
-date: 2022-10-28T20:52:17.559Z
+published: 1
+date: 2023-02-23T00:54:08.241Z
 tags: 
 editor: markdown
-dateCreated: 2022-10-28T20:52:17.559Z
+dateCreated: 2023-02-23T00:26:22.444Z
 ---
+
 
 
 ## Intro to Structs
 
-Structures are a programmer-defined data type that permit the programmer
-to group disparate types of data. You use the key word *struct* to
-indicate the definition of a structure data type.
-
+Structures are a programmer-defined data type that permit the programmer to group disparate types of data. You use the key word *struct* to indicate the definition of a structure data type.
+```
     struct Date
     {
         int day;
         int month;
         int year;
     };
-    Notice the extra semicolon after the last brace.  Its important.
+```
+> Notice the extra semicolon after the last brace.  It is important.
+{.is-info}
 
-Once a structure is defined, variables can be defined to be of the
-defined data type. The grouped members of the structure are accessed
-using the *dot* operator (a period), or through the -\> operator if the
-struct has been dynamically allocated.
+
+Once a structure is defined, variables can be defined to be of the defined data type. The grouped members of the structure are accessed using the *dot* operator (a period), or through the -\> operator if the struct has been dynamically allocated.
 
 The contents of a structure can be any valid C data type.
 
@@ -39,5 +37,4 @@ The contents of a structure can be any valid C data type.
       int GPA;
      };
 
-When the members (elements) of a structure are pointers, those elements
-must be dynamically allocated before being used.
+When the members (elements) of a structure are pointers, those elements must be dynamically allocated before being used.

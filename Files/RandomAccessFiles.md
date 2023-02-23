@@ -1,14 +1,5 @@
----
-title: Random Access files
-description: 
-published: true
-date: 2022-10-28T23:47:56.519Z
-tags: 
-editor: markdown
-dateCreated: 2022-10-28T19:00:53.710Z
----
 
-## Random Access Files  {#random-access-files .unnumbered}
+## Random Access Files  
 
 A random access file is a file that can be read (or written) from any
 position in the file. The user of a random access file does not need to

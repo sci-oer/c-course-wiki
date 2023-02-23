@@ -1,36 +1,25 @@
-
 ---
-title: Organizing Your Code
+title: OrganizingYourCode
 description: 
-published: true
-date: 2022-10-28T20:52:17.559Z
+published: 1
+date: 2023-02-23T00:58:43.410Z
 tags: 
 editor: markdown
-dateCreated: 2022-10-28T20:52:17.559Z
+dateCreated: 2023-02-23T00:26:23.565Z
 ---
 
-## Organizing your Code {#organizing-your-code .unnumbered}
 
-Generally, you should define structures in the header files of your
-programs. A structure goes in the header file for the source code that
-provides the functions for operating on the structure.
 
-For example, the structure definition for the student structure might be
-found in a student.h file, while the loadStudentRecord and
-printStudentRecord functions would be in a students.c file. Other
-functions that provided ways to operate on that same structure would be
-found in the same file (such as a sortRecords function and a
-calculateGPA function)
+## Organizing your Code 
 
-Structs can be used as a variable type anywhere it is valid to have a
-type. Structs can be parameters to functions. A pointer to a struct can
-be a return type. Structs can be placed in arrays (and trees, and heaps,
-and stacks, and lists, and all other data types). Structs can make your
-code much more maintainable and readable
+Generally, you should define structures in the header files of your programs. A structure goes in the header file for the source code that provides the functions for operating on the structure.
 
-The code below shows the code for loading and printing students
-rearranged into the proper file structure. As you can see, the main file
-becomes far more readable once the functions are used.
+For example, the structure definition for the student structure might be found in a student.h file, while the loadStudentRecord and printStudentRecord functions would be in a students.c file. Other functions that provided ways to operate on that same structure would be found in the same file (such as a `sortRecords` function and a `calculateGPA ` function)
+
+Structs can be used as a variable type anywhere it is valid to have a type. Structs can be parameters to functions. A pointer to a struct can be a return type. Structs can be placed in arrays (and trees, and heaps, and stacks, and lists, and all other data types). Structs can make your
+code much more maintainable and readable.
+
+The code below shows the code for loading and printing students rearranged into the proper file structure. As you can see, the main file becomes far more readable once the functions are used.
 
 **student.h**
 
