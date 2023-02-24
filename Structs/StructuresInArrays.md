@@ -2,18 +2,27 @@
 title: StructuresInArrays
 description: 
 published: 1
-date: 2023-02-23T01:24:53.553Z
+date: 2023-02-24T17:59:00.757Z
 tags: 
 editor: markdown
-dateCreated: 2023-02-23T00:26:28.256Z
+dateCreated: 2023-02-23T20:35:12.258Z
 ---
-
-
 
 ## Structures in Arrays  
 
 Structures can be used as the type of a statically declared array. You declare the array with the structure type instead of something like int or char.
 
+Given the following struct defintiion:
+```c
+    struct Student
+    {
+      char * firstName;
+      char * surname;
+      int studentID;
+      int GPA;
+    };
+```
+We can make a statically allocated array of students as shown below.
 ```c
 int main(void){
     int CLASS_SIZE = 180;
@@ -29,12 +38,12 @@ array.
  int main(void){
     int CLASS_SIZE = 180;
     int i;
-    struct student * list = malloc(sizeof(struct student)*CLASS_SIZE);
+    struct student * dynamicListofStudents = malloc(sizeof(struct student)*CLASS_SIZE);
     for(i=0; i<CLASS_SIZE; i++){
-        loadStudentRecord(&list[i], "lastname", "firstname", 10, 4);   
+        loadStudentRecord(&dynamicListofStudents[i], "lastname", "firstname", 10, 4);   
     }
 } 
 ```
-> note that the above code puts the same value in all records, it needs to be fixed to be useful
+> note that both of these code samples assign the same values to all records.   That isn't a useful behaviour for a real program.
 {.is-warning}
 

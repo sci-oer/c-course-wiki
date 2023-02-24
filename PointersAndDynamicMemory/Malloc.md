@@ -1,6 +1,20 @@
+---
+title: Malloc
+description: 
+published: 1
+date: 2023-02-24T02:04:05.071Z
+tags: 
+editor: markdown
+dateCreated: 2023-02-23T20:34:59.859Z
+---
+
 
 
 # Malloc 
+
+- Mini Lecture(video)[Pointers and Dynamic Memory](http://localhost:8000/lectures/Memory/Memory_MemoryConceptually/)
+- Mini Lecture(video)[Malloc and Free](http://localhost:8000/lectures/Memory/Memory_MallocFreeExample/)
+
 Malloc is the tool you use to ask the computer to reserve heap memory for your programs. You must have stdlib included in order to use malloc. The syntax is as follows:
 ```c
     malloc(size multiplied by how much)
@@ -17,6 +31,8 @@ If a computer runs out of memory, then a call to malloc will fail. While this do
     if (myCharPointer == NULL) {printf("out of memory: exiting"); exit(1);}
 ```
 # Arrays and Dynamic Memory
+
+- Interactive tutorial for this topic: [Dynamic Two Dimensional Arrays Tutorial](http://localhost:8888/lab/tree/tutorials/PointersAndDynamicMemory/TwoDimensionalArrays.ipynb)
 
 An array of anything can be declared with pointers and malloc. 
 - The first step is to declare a pointer of the same type as the intended array. 

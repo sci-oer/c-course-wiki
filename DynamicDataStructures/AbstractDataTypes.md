@@ -1,8 +1,20 @@
+---
+title: AbstractDataTypes
+description: 
+published: 1
+date: 2023-02-24T19:19:23.684Z
+tags: 
+editor: markdown
+dateCreated: 2023-02-23T20:34:48.673Z
+---
+
  
 
 ### Abstract Data Types 
+The study of data structures is usually an entire course.   The notion of an **abstract data type** is central to understanding data structures.
 
-Remember that specification (i.e. \"what\") and implementation (i.e. \"how\") are two separate things. For example, if you are writing functions in your code, the specification is the function header + pre/post conditions and the implementation is the local variables + body of subroutine. 
+
+When defining an abstract data type, the specification (i.e. \"what\") and implementation (i.e. \"how\") are two separate things. For example, if you are writing functions in your code, the specification is the function header + pre/post conditions and the implementation is the local variables + body of subroutine. 
 
 When you are writing abstract data types, the specification is the definition of data type + operations defined on that type. The implementation is the program needed to effect those operations. In C the specification is usually a header file containing type and function declarations together with a .c file in which they are implemented. 
 
@@ -103,7 +115,7 @@ Here's an example of what some of the fraction code might look like in C. First,
 The `.c `file doesn't need to redefine the struct because the `.h` file is included. The .c file is used to flesh out the implementation of the
 functions.
 
-```
+```c
     /**
      * @file fraction.c
      * @author Judi McCuaig
@@ -150,10 +162,3 @@ The fraction ADT can be used by simply including the .h file in the c program th
       Fraction * theAnswer = add(myFraction, myOtherFraction);
     }    } 
 ```
-## Information Hiding (Encapsulation) 
-
-Information Hiding is one way to achieve abstraction. The details of the library implementation are hidden by providing functions to perform operations on the data structure instead of allowing programmers to work directly with the attributes of the data structure. The user of the ADT must use ONLY the interface (the available operations) of the ADT and must resist the temptation to go 'under the hood' and use the component parts. 
-
-Information Hiding is also called encapsulation. Encapsulation helps to prevent errors when a library of functions is updated. For example, suppose you were using a String ADT that provides a `stringLength(String)` operation to return the length of the string. Suppose further that you knew that the length of the string was stored as an integer in the ADT because you had looked at the source code. If, in your code, you write `int size = stringLength(myString);` you are guaranteed (because of preconditions and postconditions) that you will get the length of the string returned. 
-
-However, if you chose to ignore the encapsulation and bypassed the interface, writing the following instead `int size = myString->length` you could end up with code that gave errors. In this situation what would happen if the author of the String library gives you an update that changes the declaration of length in the struct from int to double? Your previously working code will break, because you didn't use the interface. 

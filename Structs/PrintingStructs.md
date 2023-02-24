@@ -2,12 +2,11 @@
 title: PrintingStructs
 description: 
 published: 1
-date: 2023-02-23T01:10:11.302Z
+date: 2023-02-24T17:55:38.139Z
 tags: 
 editor: markdown
-dateCreated: 2023-02-23T00:26:24.759Z
+dateCreated: 2023-02-23T20:35:09.618Z
 ---
-
 
 ## Printing 
 
@@ -18,7 +17,7 @@ When writing a print function for a struct, try to keep decorations to a minimum
 A print function using sprintf for the student struct might look something like this:
 
 
-```    
+``` c  
     char * printStudent(struct Student * toPrint)
     {
     /*first find out how much space you need I used +30 so I could have some labels and the id and GPA */
@@ -26,6 +25,6 @@ A print function using sprintf for the student struct might look something like 
        /*I am mallocing memory in a function- which means it needs to be freed someplace else */
       char * printBuf = malloc(sizeof(char)*length);
       sprintf(printBuf, "%s, %s (%d) GPA: %d", toBePrinted->surname, toBePrinted->firstName,  toBePrinted->studentID, toBePrinted->GPA);
-      return(printBuf); /* the person calling this print routine needs to clean up the memory I am sending a pointer to */
+      return(printBuf); /* the code calling this print routine needs to free up the memory I am sending a pointer to */
      }
 ```

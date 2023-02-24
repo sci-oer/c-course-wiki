@@ -2,12 +2,11 @@
 title: CreateFunctionsForStructs
 description: 
 published: 1
-date: 2023-02-23T01:02:45.605Z
+date: 2023-02-24T18:00:31.079Z
 tags: 
 editor: markdown
-dateCreated: 2023-02-23T00:26:18.969Z
+dateCreated: 2023-02-23T20:35:04.324Z
 ---
-
 
 ## Create Functions for Structs
 
@@ -23,7 +22,7 @@ This means that you can write functions that create, and initialize a struct- do
 
 An create function for the student struct might look like this:
 
-
+```c
     struct Student * createStudent(char * first, char * last,  int ID, int gradePoint)
     {
      struct Student * newStudent = malloc(sizeof(struct Student));
@@ -33,5 +32,6 @@ An create function for the student struct might look like this:
      strcpy(newStudent->surname, last);
      newStudent->studentID = ID;
      newStudent->GPA = gradePoint;
-     return(newStudent);
+     return(newStudent);  //we are returning a pointer to memory that must be freed by some other part of the program
     }
+```

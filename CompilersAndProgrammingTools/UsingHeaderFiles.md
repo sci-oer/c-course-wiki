@@ -1,3 +1,13 @@
+---
+title: UsingHeaderFiles
+description: 
+published: 1
+date: 2023-02-24T17:38:17.250Z
+tags: 
+editor: markdown
+dateCreated: 2023-02-23T20:34:47.791Z
+---
+
 
 ## Using header files 
 
@@ -27,5 +37,4 @@ Now I can use the function I defined in myprog.c in a program. In the file with 
        return(0);
      }
 ```
-It really isn't difficult to keep your source files organized, and it makes it much easier to manage larger projects if you have good work
-habits already.
+The use of header files eliminates the problem of the c compiler needing definitions for functions that will be compiled in subsequent files.  Without header files it is nearly impossible to create large, multi-file c programs.

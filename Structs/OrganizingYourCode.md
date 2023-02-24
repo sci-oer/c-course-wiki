@@ -2,27 +2,24 @@
 title: OrganizingYourCode
 description: 
 published: 1
-date: 2023-02-23T00:58:43.410Z
+date: 2023-02-24T17:49:51.941Z
 tags: 
 editor: markdown
-dateCreated: 2023-02-23T00:26:23.565Z
+dateCreated: 2023-02-23T20:35:08.437Z
 ---
-
-
 
 ## Organizing your Code 
 
 Generally, you should define structures in the header files of your programs. A structure goes in the header file for the source code that provides the functions for operating on the structure.
 
-For example, the structure definition for the student structure might be found in a student.h file, while the loadStudentRecord and printStudentRecord functions would be in a students.c file. Other functions that provided ways to operate on that same structure would be found in the same file (such as a `sortRecords` function and a `calculateGPA ` function)
+For example, the structure definition for the student structure might be found in a student.h file, while the `loadStudentRecord` and `printStudentRecord` functions would be in a students.c file. Other functions that provided ways to operate on that same structure would be found in the same file (such as a `sortRecords` function and a `calculateGPA ` function)
 
-Structs can be used as a variable type anywhere it is valid to have a type. Structs can be parameters to functions. A pointer to a struct can be a return type. Structs can be placed in arrays (and trees, and heaps, and stacks, and lists, and all other data types). Structs can make your
-code much more maintainable and readable.
+Structs can be used as a variable type anywhere it is valid to have a type. Structs can be parameters to functions. A pointer to a struct can be a return type. Structs can be placed in arrays (and trees, and heaps, and stacks, and lists, and all other data types). Structs can make your code much more maintainable and readable.
 
-The code below shows the code for loading and printing students rearranged into the proper file structure. As you can see, the main file becomes far more readable once the functions are used.
+
 
 **student.h**
-
+```c
     struct Student
     {
       char * firstName;
@@ -34,9 +31,10 @@ The code below shows the code for loading and printing students rearranged into 
 
     int printStudentRecord(struct Student * studentPtr);
     int loadStudentRecord(struct Student * studentPtr, char * first, char * last, int id, int gpa);
+```
 
 **student.c**
-
+```c
     #include <string.h>
     #include <stdlib.h>
     #include <stdio.h>
@@ -56,9 +54,12 @@ The code below shows the code for loading and printing students rearranged into 
      studentPtr->studentID = id;
      studentPtr->GPA = gpa;
      }
+```
+
+The code given shows the code for loading and printing students rearranged into the proper file structure. As you can see, the main file becomes far more readable once the functions are used.
 
 **main.c**
-
+```c
     #include <stdlib.h>
     #include "student.h"
      
@@ -69,3 +70,4 @@ The code below shows the code for loading and printing students rearranged into 
     loadStudentRecord(studentPtr, "Pebbles", "Flintstone", 12345, 5);
     printStudentRecord(studentPtr);
     }
+```

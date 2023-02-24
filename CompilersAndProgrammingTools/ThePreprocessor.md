@@ -1,40 +1,63 @@
+---
+title: ThePreprocessor
+description: 
+published: 1
+date: 2023-02-24T17:36:32.320Z
+tags: 
+editor: markdown
+dateCreated: 2023-02-23T20:34:46.892Z
+---
+
 
 ## The Preprocessor 
+- Mini Lecture(video) [The Preprocessor](http://localhost:8000/lectures/PreProcessor/PreProcessor_Conceptual/)
+- Mini Lecture(video) [Preprocessor Example](http://localhost:8000/lectures/PreProcessor/PreProcessor_Example/)
 
-The preprocessor is a program that runs BEFORE the compiler. It does three things- all of which are essentially search/replace on the text.
+The preprocessor is a program that runs BEFORE the compiler. The preprocessor can be used for three different tasks- all of which are essentially search/replace text.
 
-1. **macro processing.** Macros are defined values or operations that are substituted into the text. Its just a strict text substitution.
-It makes your code a bit more readable and means that if you have to change the definition, you do it in one place- but you don't have to define functions. It is sometimes tricky to get right- don't try to to get too fancy with it.
+1. **macro processing.** Macros are defined values or operations that are substituted into the text. It is  a strict text substitution that can be used to make your code a bit more readable and means that if you have to change the definition, you do it in one place- but you don't have to define functions. 
 
 For example, if the macro `#define LOONIE 100` is added to a source file,  all occurrences of LOONIE will be replaced by 100. By convention macros are capital letters. The \# sign is
 the signal that a macro is being defined.
 
-- put macros at the beginning, after the \#includes
+- place macros at the top of a file, after the \#includes
     - `#define SQUARE(a) ((a)\*(a))`
     - `#define MAX(a,b) ((a)\<(b)?(b):(a))`
     - its a good idea to completely parenthesize
-2.  **including header files**
- The \#include is actually a call to the preprocessor. It goes off, gets the referenced files, and copies the contents into that spot in the source code.
+2.  **including header files** `#include` is actually a call to the preprocessor. When `#include` is encountered, the preprocessor gets the referenced files and copies the contents into that spot in the source code.
 
-    - #include \"\" means look in current directory
-    - #include \<\> means look in library directories
-    - it is important to know where those library paths are. It is **EASY** to control which library is included when compiling on the command line. It can be challenging if you are using an IDE
+`#include` uses two different paths when looking for files. The choice is determined by the way a file is annotated.
+    - #include \"filename.h\" means look in current directory for a file named filename.h
+    - #include \<filename.h\> means look in library directories for a file named filename.h
+ 
+ Typically system headers are included with `<>` and programmer defined headers are included with `""`  
 
 3.  **conditional compilation** Conditional compilation lets you tell the compiler whether or
 not to include parts of the code. This use of preprocessor commangs can be very useful for debugging.
 
- `#define DEBUG 0 (0 is false)`
+
 ```c
+//near the top of the file
+#define DEBUG 0 (0 is false)
+... //somewhere else in the code
 #if DEBUG 
  //print debugging information
 
 #endif //must include this
 ```
+A defined constant for DEBUG can make it really easy to turn on/off debugging statements. You can also define the value of a preprocessor macro on command line with the -D flag to gcc. 
+`gcc lab0.c -o lab0 -DDEBUG = 1`
 
-#### Include Guards 
+```c
+    #define DEBUG 1
+    //.... code.....
+    if(DEBUG){
+        printf("Removing from list: %d %s\n", getTime(patron),%getID(patron));
+    }
+```
 
-As your code gets to be more complicated, you'll notice that header files will need to include other header files, and soon you'll have things declared multiple times. This is especially a problem if you are defining constants or structs in your header files. Use include guards
-to solve the problem
+
+As your code gets to be more complicated, you'll notice that header files will need to include other header files, and soon you'll have things declared multiple times. This is especially a problem if you are defining constants or structs in your header files. Use preprocessor commands as include guards to solve the problem
 ```c
     #ifndef SOME_UNLIKELY_COMBO_OF_WORDS
     #define SOME_UNLIKELY_COMBO_OF_WORDS
@@ -48,16 +71,7 @@ You can define constants (usually in a header file) that are then available for 
     #define BAKERSDOZ (12+1)
     #define LIST_H
 ```
-A defined constant for DEBUG can make it really easy to turn on/off debugging statements. You can also define the value of a preprocessor macro on command line with the -D flag to gcc. 
-`gcc lab0.c -o lab0 -DDEBUG = 1`
 
-```c
-    #define DEBUG 1
-    //.... code.....
-    if(DEBUG){
-        printf("Removing from list: %d %s\n", getTime(patron),%getID(patron));
-    }
-```
 If your constant is a calculation, use parenthesis, else you risk getting unwanted results. 
 
 In the example below, p will evaluate to 17. Make sure you understand why that is the case.

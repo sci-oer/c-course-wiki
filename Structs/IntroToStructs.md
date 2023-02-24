@@ -2,13 +2,11 @@
 title: IntroToStructs
 description: 
 published: 1
-date: 2023-02-23T00:54:08.241Z
+date: 2023-02-24T00:04:19.401Z
 tags: 
 editor: markdown
-dateCreated: 2023-02-23T00:26:22.444Z
+dateCreated: 2023-02-23T20:35:07.332Z
 ---
-
-
 
 ## Intro to Structs
 

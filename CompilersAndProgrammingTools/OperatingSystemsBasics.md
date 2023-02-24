@@ -1,9 +1,20 @@
+---
+title: OperatingSystemsBasics
+description: 
+published: 1
+date: 2023-02-24T02:40:00.459Z
+tags: 
+editor: markdown
+dateCreated: 2023-02-23T20:34:45.115Z
+---
+
 
 # Operating System Basics
+- Mini Lecture(video) [Introduction to Operating Systems](http://localhost:8000/lectures/OperatingSystems/)
 
 Operating systems are the interface between the hardware and the user. They provide the basic operations that you need for your computer to be useful. Programs use those basic operations to build more complex operations (especially shell scripts)- but you can interact with the operating system at a very basic level. Its REALLY useful to understand how that works.
 
-![This figure shows the relationship between the devices that make up a computer (the disks, video, sound, etc), the operating system, and the programs that we use. Programs use the operating system to communicate with the devices. Everything is a program.](/img/programmingTools1.jpg)
+![This figure shows the relationship between the devices that make up a computer (the disks, video, sound, etc), the operating system, and the programs that we use. Programs use the operating system to communicate with the devices. Everything is a program.](/img/programmingTools1.jpg =60%x)
 
 There are many different types of operating systems, some of which are listed below. Each system is different and programs that run under one operating system likely won't run under another operating system.
 

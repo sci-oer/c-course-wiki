@@ -1,7 +1,19 @@
+---
+title: Realloc
+description: 
+published: 1
+date: 2023-02-24T00:07:26.788Z
+tags: 
+editor: markdown
+dateCreated: 2023-02-23T20:35:01.647Z
+---
 
 
 
-## Realloc 
+
+# Realloc 
+
+- Interactive tutorial for this topic: [Realloc Tutorial](http://localhost:8888/lab/tree/tutorials/PointersAndDynamicMemory/Realloc.ipynb)
 
 It is possible to increase or decrease the size of allocated memory using realloc. The format of the function call is `realloc(pointerToExistingMemory, NewSizeInBytes);`
 

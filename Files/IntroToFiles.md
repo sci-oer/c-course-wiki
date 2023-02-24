@@ -1,5 +1,15 @@
+---
+title: IntroToFiles
+description: 
+published: 1
+date: 2023-02-24T00:04:36.669Z
+tags: 
+editor: markdown
+dateCreated: 2023-02-23T20:34:53.595Z
+---
 
 ## Intro To Files
+- There is an interactive tutorial for this topic: [Intro to Files Tutorial](http://localhost:8888/lab/tree/tutorials/Files/IntroToFiles.ipynb)
 
 Files are a great way to permanently store data that your program needs to have each time it runs. You can keep almost any kind of data in a file including saved states for the program (like game save files, data, and startup parameters.
 

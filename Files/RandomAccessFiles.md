@@ -1,5 +1,17 @@
+---
+title: RandomAccessFiles
+description: 
+published: 1
+date: 2023-02-24T00:04:55.902Z
+tags: 
+editor: markdown
+dateCreated: 2023-02-23T20:34:54.488Z
+---
+
 
 ## Random Access Files  
+
+- Interactive tutorial for this topic: [Random Access Files Tutorial](http://localhost:8888/lab/tree/tutorials/Files/RandomAccessFiles.ipynb)
 
 A random access file is a file that can be read (or written) from any
 position in the file. The user of a random access file does not need to

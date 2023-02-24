@@ -2,20 +2,18 @@
 title: StaticAllocationOfStructs
 description: 
 published: 1
-date: 2023-02-23T01:19:12.903Z
+date: 2023-02-24T17:50:22.708Z
 tags: 
 editor: markdown
-dateCreated: 2023-02-23T00:26:25.925Z
+dateCreated: 2023-02-23T20:35:10.495Z
 ---
-
-
 
 ## Static Allocation of Structures 
 
 Structures can be statically allocated (from the stack) just like other variable types.
 
 First define the structure such as the following definition of  a Date.
-```
+```c
     struct Date
     {
       int day;
@@ -25,7 +23,7 @@ First define the structure such as the following definition of  a Date.
 ```
 Then one can use the struct as a variable type and static memory allocation is the same as for any other type of variable.
 
-```
+```c
 int main(void){
 
       /*structure allocation- static (because there is no malloc) */

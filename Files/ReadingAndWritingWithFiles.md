@@ -1,5 +1,17 @@
+---
+title: ReadingAndWritingWithFiles
+description: 
+published: 1
+date: 2023-02-24T00:05:04.748Z
+tags: 
+editor: markdown
+dateCreated: 2023-02-23T20:34:55.371Z
+---
+
 
 ## Reading and Writing with files 
+
+- Interactive tutorial for this topic: [Reading and Writing Files Tutorial](http://localhost:8888/lab/tree/tutorials/Files/ReadingAndWritingFiles.ipynb)
 
 One way to work with files is to read or write single characters.
 `fgetc()` and `fputc()` are the functions that work with singlecharacters. The syntax for getting characters is `fgetc(filePointer);`

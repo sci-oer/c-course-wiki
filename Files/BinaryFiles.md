@@ -1,5 +1,16 @@
+---
+title: BinaryFiles
+description: 
+published: 1
+date: 2023-02-24T18:07:26.820Z
+tags: 
+editor: markdown
+dateCreated: 2023-02-23T20:34:52.689Z
+---
+
 
 ### Binary files 
+- Interactive tutorial for this topic: [Binary Files Tutorial](http://localhost:8888/lab/tree/tutorials/Files/BinaryFiles.ipynb)
 
 A binary file is ultimately just a sequence of 0s and 1s (as are all files). A binary file is created when the software (and the programmer) specifies a specific layout for the sequence of 0s and 1s. Data is written according to that specific layout, and then it can be read back in again using the same rules for layout. The rules for file organization of binary files are set by the software (ultimately by the programmer) that created the file, which results in proprietary file formats that can only be read by applications designed to read those specific files.
 
@@ -24,7 +35,7 @@ One side effect of this is that when you are storing string in a binary file, it
   - `SEEK_CUR` is the current position of the file. 
      - `SEEK_CUR` changes each time fseek,fread, or rewind are called.
 
-![image](/img/fseek.jpg) []{#fseek label="fseek"}
+![Grid showing two rows of characters. "Dopey1 1 0 90\0" is the first row. "RFP093 1 1 75\0" is the second row.  The command is fseek(filePtr(sizeof(struct Patron),SEEK_SET). SEEK_SET is pointing at the First D in the first row. SEEK_CUR is set to the R at the beginning fo the second row.  SEEK_END is set to the last character in the second row.](/img/fseek.jpg) 
 
 The listing below gives an example program for reading and writing to binary files. Notice that the call to fopen uses either `"wb"` or "`rb"` to read and write a binary file as opposed to a text file. The struct used in this example is described in more detail in subsequent sections of this ebook.
 ```c

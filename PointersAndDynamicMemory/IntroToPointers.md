@@ -1,5 +1,17 @@
+---
+title: IntroToPointers
+description: 
+published: 1
+date: 2023-02-24T18:15:30.260Z
+tags: 
+editor: markdown
+dateCreated: 2023-02-23T20:34:58.962Z
+---
+
 
 ## Intro to Pointers
+
+- Interactive tutorial for this topic: [Intro to Pointers Tutorial](http://localhost:8888/lab/tree/tutorials/PointersAndDynamicMemory/IntroToPointers.ipynb)
 
 A pointer is a type of variable in the same way that int or double are a type of a variable. An *int* variable holds a value that is always an integer and the computer knows to allocate the right amount of memory to hold an integer when it sees an int variable. A *char* variable requires enough memory to hold a single character.
 A pointer variable holds a memory address, so it needs only to have enough allocated memory to hold an address. This is often less memory that is required for other variable types.
@@ -46,16 +58,16 @@ For a pointer variable to be useful, it must be possible to work with the value 
 
 To summarize: **If you want to:**
 
-- Get the value of the thing the pointer is pointing at
+- **Get the value of the thing the pointer is pointing at**
     - `* name`
     - `* intPtr = 5;` sets the value of the variable being pointed at
 
--  Get the address of a thing
+-  **Get the address of a thing**
     -   `& thing`
--   Assign a pointer to point at a thing
+-   **Assign a pointer to point at a thing**
     -  `variableType * pointerName = & variable`
     -   `int * intPtr = &intVariable;`
--   Assign a pointer to point at the same thing as a different pointer
+-   **Assign a pointer to point at the same thing as a different pointer**
     -   `pointerName = otherPointerName`
     -   `intPtr = otherIntPtr;`
-    -   **Make sure both sides have the same type**
+   
